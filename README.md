@@ -20,6 +20,7 @@
 ### <u>Quiz 1.0 Page</u>
 <ul>
     <li>public\practise folder - practise.html, styles.css, logic.js</li>
+</ul>
 
 ### <u>Quiz 2.0 Page</u>
 <ul>
