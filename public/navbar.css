@@ -1,0 +1,156 @@
+/* navigation bar */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+body{
+    background-color: #e8f0f7;
+    height: auto;
+    padding-top: 60px;
+}
+
+.header{
+    background-color: black;
+    position : fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10; 
+}
+
+.header_content{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    min-height: 60px;
+}
+
+@font-face{
+    font-family:OdiseanTech;
+    src:url('media/OdiseanTech.ttf');
+}
+/* fonts: https://www.fontspace.com/odisean-tech-font-f103828 */
+
+.logo{
+    font-family: OdiseanTech, sans-serif;
+    color: #fff;
+    font-size: 23px;
+    letter-spacing: -1.5px;
+    font-weight: 500;
+}
+
+.nav{
+    transition: all 0.3s ease-in-out;
+}
+
+.nav_list{
+    display:flex;
+    column-gap: 40px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+.nav_link{
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    transition: all 0.4s;
+}
+
+.nav_link:hover
+.nav_link:focus{
+    color: rgba(255, 255, 255, 1);
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    height: 2px;
+    width: 27px;
+    background: #fff;
+    margin: 5px 0;
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav--open{
+    transform: translate(0) !important;
+    z-index: 11;
+}
+
+.hamburger--open .bar:nth-child(1){
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger--open .bar:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger--open .bar:nth-child(3){
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 650px){
+    .nav{
+        position: fixed;
+        top: 60px;
+        left: 0;
+        background-color: rgb(19,22,26);
+        width: 100%;
+        padding: 10px 0 25px;
+        transform: translateX(-100%);
+    }
+
+    .nav_list{
+        flex-direction: column;
+        align-items: center;
+        row-gap:20px;
+    }
+
+    .nav_link{
+        font-size: 14px;
+    }
+
+    .hamburger{
+        display: block;
+    }
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    color: #fff;
+    text-align: center;
+    font-size: 0.6rem;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }

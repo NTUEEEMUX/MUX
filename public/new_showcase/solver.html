@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUX - Showcase</title>
+    <link rel="icon" href="../media/mux_final.ico" type="image/x-icon">
+    <link rel="stylesheet" href="solver.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- background -->
+    <video id="animated-background" class="animated-background" muted>
+        <source class="pcb" src="../media/pcb.mp4" type="video/mp4">
+    </video>
+
+    <div id="nav_bar" class="header">
+        <div class="header_content">
+            <a href="../index.html" class="logo">MUX</a>
+
+            <nav class="nav">
+                <ul class="nav_list">
+                    <li class="nav_item">
+                        <a href="../index.html" class="nav_link">Home</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="solver.html" class="nav_link">Showcase</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="../practise/practise.html" class="nav_link tooltip">Quiz 1.0
+                            <span class="tooltiptext">Multiple Choice</span>
+                        </a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="../quiz2/quiz2.html" class="nav_link tooltip">Quiz 2.0
+                            <span class="tooltiptext">Fill in the Blank</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="show-container">
+        <div id="type-container" class="input-group">
+            <h2><u>Multiplexer Showcase</u></h2>
+            <span style="margin-left: 10px;"></span>
+            <svg id="information" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+
+            <!-- popup hover content goes here -->
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <h3><u>How to use:</u></h3>
+                    <br>
+                    <p>&#8226; Choose the desired multiplexer and fill in the inputs & selector(s) configurations.</p>
+                    <p>&#8226; After submission, the min and maxterms would be returned, along with outputs at each term iteration. </p>
+                    <br>
+                    <h3><u>Additional Informations:</u></h3>
+                    <br>
+                    <p>&#8226; Supported multiplexers can be selected via the dropdown.</p>
+                    <p>&#8226; variables supported ranges from A to F (including binaries).</p>
+                    <p>&#8226; Use "(" and ")" to denote piority functions.</p>
+                    <p>&#8226; Avalible logics can be input using the buttons provided below.</p>
+                    <br>
+                    <h3><u>Sample input:</u></h3>
+                    <p>&#8226; C ⊖ (A • (B + C))' ⊕ D</p>
+                </div>
+            </div>
+        </div>
+        <div id="orientation-container">
+            <div id="circuit"></div>
+            <br>
+            <div id="input-container">
+                <select name="type" id="type" onchange="getMuxVariants()">
+                    <option value="1">2-to-1</option>
+                    <option value="2" selected>4-to-1</option>
+                    <option value="3">8-to-1</option>
+                    <option value="4">16-to-1</option>
+                </select>
+                <br>
+                <div id="inputss"></div>
+                <br>
+                <div id="special-btn">
+                    <button class="button-17" onclick="insertSymbol('+')"> +<br>(OR) </button>
+                    <button class="button-17" onclick="insertSymbol('⊕')"> ⊕<br>(XOR) </button>
+                    <button class="button-17" onclick="insertSymbol('⊖')"> ⊖<br>(XNOR) </button>
+                    <button class="button-17" onclick="insertSymbol('•')"> •<br>(AND) </button>
+                    <button class="button-17" onclick="insertSymbol('\'')"> '<br>(NOT) </button>
+                </div>
+                <br>
+                <div id="submit-btn">
+                    <button class="button-54" href="#solution-container" id="solution-anchor" onclick="submit()">Solve →</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="real-solution">
+            <br>
+            <div id="solution-container"></div>
+        </div>
+    </div>
+
+    <script src="solver.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('#solution-anchor');
+    
+            for (const link of links) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+        });
+
+        const navE1 = document.querySelector('.nav');
+        const hamburgerE1 = document.querySelector('.hamburger');
+
+        hamburgerE1.addEventListener('click', () => {
+        navE1.classList.toggle("nav--open");
+        hamburgerE1.classList.toggle("hamburger--open");
+        });
+
+        navE1.addEventListener('click', () => {
+        navE1.classList.remove("nav--open");
+        hamburgerE1.classList.remove("hamburger--open");
+        });
+    </script>
+</body>
+</html> 

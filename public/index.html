@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplexers</title>
+    <link rel="icon" href="media/mux_final.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nice-forms/nice-forms.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- background -->
+    <video id="animated-background" class="animated-background" muted>
+        <source class="pcb" src="media/pcb.mp4" type="video/mp4">
+    </video>
+
+    <header id="intro" class="intro">
+        <div class="introImg" style="--stacks: 3;">
+            <span style="--index: 0;">MUX</span>
+            <span style="--index: 1;">MUX</span>
+            <span style="--index: 2;">MUX</span>
+        </div>
+        <div class="introText">
+            <h3 id="subtitle" ></h3>
+        </div>
+        <a href="#scroll" class="arrowdown">
+            <svg viewBox="0 0 24 24" width="100" height="100" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </a>
+    </header>
+
+    <div id="nav_bar" class="header">
+        <div class="header_content">
+            <a href="#intro" class="logo">MUX</a>
+
+            <nav class="nav">
+                <ul class="nav_list">
+                    <li class="nav_item">
+                        <a href="#introduction" class="nav_link">Home</a>
+                    </li>
+                    <!-- <li class="nav_item">
+                        <a href="old_showcase/showcase.html" class="nav_link">Beta</a>
+                    </li> -->
+                    <li class="nav_item">
+                        <a href="new_showcase/solver.html" class="nav_link">Showcase</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="practise/practise.html" class="nav_link tooltip">Quiz 1.0
+                            <span class="tooltiptext">Multiple Choice</span>
+                        </a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="quiz2/quiz2.html" class="nav_link tooltip">Quiz 2.0
+                            <span class="tooltiptext">Fill in the Blank</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="scroll"></div>
+
+    <!-- whole ass form -->
+    <div class="demo-page">
+        <div class="demo-page-navigation">
+            <nav class="nav2">
+            <ul>
+                <li>
+                    <a href="#introduction">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                    </svg>
+                    Introduction</a>
+                </li>
+                <li>
+                    <a href="#function">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <line x1="6" y1="2" x2="6" y2="22"></line>
+                            <line x1="6" y1="2" x2="18" y2="7"></line>
+                            <line x1="6" y1="22" x2="18" y2="15"></line>
+                            <line x1="18" y1="7" x2="18" y2="15"></line>
+    
+                            <line x1="11" y1="20" x2="11" y2="23"></line>
+                            <line x1="14" y1="19" x2="14" y2="23"></line>
+                            <line x1="18.5" y1="12" x2="21" y2="12"></line>
+    
+                            <line x1="1" y1="4" x2="6" y2="4"></line>
+                            <line x1="1" y1="9" x2="6" y2="9"></line>
+                            <line x1="1" y1="14" x2="6" y2="14"></line>
+                            <line x1="1" y1="19" x2="6" y2="19"></line>
+                        </svg>
+                        Multiplexers</a>
+                </li>
+                <li>
+                    <a href="#logic">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <path d="M16.2 12.96 L5.4 2.16 L5.4 23.76 Z" />
+                            <circle cx="18.36" cy="12.96" r="2.16" />
+    
+                            <line x1="2.16" y1="12.96" x2="5.4" y2="12.96"></line>
+                            <line x1="20.52" y1="12.96" x2="23.76" y2="12.96"></line>
+                        </svg>
+                        Logic Gates</a>
+                </li>
+                <li>
+                    <a href="#bool">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <line x1="10" y1="4" x2="8" y2="20"></line>
+                            <line x1="4" y1="7" x2="4" y2="17"></line>
+                            <ellipse cx="17" cy="12" rx="4" ry="6"></ellipse>
+                        </svg>
+                        Boolean Algebra</a>
+                </li>
+                <li>
+                    <a href="#exercise">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <polyline points="9 11 12 14 22 4"></polyline>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                        Practice</a>
+                </li>
+                <li>
+                    <a href="#resource">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        Resources</a>
+                </li>
+                <li>
+                <a href="#about">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                    About</a>
+                </li>
+            </ul>
+            </nav>
+        </div>
+        <main class="demo-page-content">
+            <section>
+            <div class="href-target" id="introduction"></div>
+            <h1 class="package-name">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+                Introduction
+            </h1>
+            <div class="base_img">
+                <img src="media/irl.png" alt="irlMUX" class="intro-image">
+                <caption><u>A CD4051BE analog multiplexer</u></caption>
+            </div>
+            <br>
+            <p>
+                A multiplexer, often abbreviated as "mux," is a digital electronic device that selects one of several input signals and forwards the selected input to a single output line. The selection of the input signal is controlled by additional inputs known as select lines or control lines.
+            </p>
+            <p>
+                <strong><u>Key Points about Multiplexers:</u></strong>
+            </p>
+            <p>
+                <strong>1. Inputs and Outputs:</strong><br>
+                A multiplexer has multiple input lines and a single output line.
+                The number of input lines is typically a power of two (e.g., 2, 4, 8, 16, etc.).
+            </p>
+            <p>
+                <strong>2. Select Lines:</strong><br>
+                The number of select lines determines how many input lines the multiplexer can handle.
+                For n select lines, the multiplexer can have 2 <sup style="font-size: 0.7em; vertical-align: super;">n</sup> input lines.
+                For example, a multiplexer with 3 select lines can handle 8 input lines (2<sup style="font-size: 0.7em; vertical-align: super;">3</sup> = 8).
+            </p>
+            <p>
+                <strong>3. Functionality:</strong><br>
+                The select lines are used to choose which input line's signal is sent to the output.
+                The combination of the select lines' binary values determines which input is selected.
+            </p>
+            <strong>4. Applications:</strong>
+            <ul>
+                <li><strong>Data Selection:</strong> Multiplexers are used to select data from multiple sources and send it to a single destination.</li>
+                <li><strong>Communication Systems:</strong> They are used in communication systems to route signals from multiple sources to a single channel.</li>
+                <li><strong>Resource Sharing:</strong> Multiplexers allow multiple signals to share a single resource, such as a communication line or a processing unit.</li>
+                <li><strong>Digital Circuits:</strong> They are used in digital circuits for implementing logic functions and reducing the number of logic gates required.</li>
+            </ul>
+            <br>
+            <strong><u>Website Content:</u></strong>
+            <ul>
+                <li><dl>
+                    <dt><strong>Landing Page</strong></dt>
+                        <dd>&nbsp&nbsp The current page. The landing page is also the homepage of the website, hosting <em>theoretical
+                            informtaion about multiplexers</em> and the main purpose of the project. You can navigate the page using the <em>sidebar</em> &lt&lt 
+                            or click on the <em>links below</em> to jump to a specific section if you are on mobile.
+                        </dd>
+                </dl></li>
+                <ul class="a">
+                    <li><a href="#function"><u>Functionality of Multiplexer</u></a></li>
+                    <li><a href="#logic"><u>Logic Gates</u></a></li>
+                    <li><a href="#bool"><u>Boolean Algebra</u></a></li>
+                    <li><a href="#exercise"><u>Practice Questions</u></a></li>
+                    <li><a href="#resource"><u>Additional Resources</u></a></li>
+                    <li><a href="#about"><u>About</u></a></li>
+                </ul>
+                <br>
+                <li><dl>
+                    <dt><strong>Interactive Pages</strong></dt>
+                        <dd>&nbsp&nbsp The website also features two other features which you can be redirected to via the navigation bar above ^ .
+                            The <em>Showcase</em> page is a interactive visual representation of the multiplexer's functionality, while the <em>Quiz</em> page is a 
+                            collection of questions to test your knowledge on the topic.
+                         </dd>
+                </dl></li>
+                <ul class="a">
+                    <li><a href="showcase/showcase.html"><u>Multiplexer Showcase</u></a></li>
+                    <li><a href="practise/practise.html"><u>Quiz Version 1.0 (multiple choice)</u></a></li>
+                    <li><a href="quiz2/quiz2.html"><u>Quiz Version 2.0 (fill in the blank)</u></a></li>
+                </ul>
+            </ul>
+            <br>
+            <p>
+                <strong>** Side Note:</strong> This project is centered around the multiplexer syllabus content of Nanyang Technological Univeristy's (NTU) EE2004/IE2104 module.<strong>**</strong>
+            </p>
+            </section>
+
+            <section>
+                <div class="href-target" id="function"></div>
+                <h1 class="package-name">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                        <line x1="6" y1="2" x2="6" y2="22"></line>
+                        <line x1="6" y1="2" x2="18" y2="7"></line>
+                        <line x1="6" y1="22" x2="18" y2="15"></line>
+                        <line x1="18" y1="7" x2="18" y2="15"></line>
+
+                        <line x1="11" y1="20" x2="11" y2="23"></line>
+                        <line x1="14" y1="19" x2="14" y2="23"></line>
+                        <line x1="18" y1="12" x2="21" y2="12"></line>
+
+                        <line x1="3" y1="4" x2="6" y2="4"></line>
+                        <line x1="3" y1="9" x2="6" y2="9"></line>
+                        <line x1="3" y1="14" x2="6" y2="14"></line>
+                        <line x1="3" y1="19" x2="6" y2="19"></line>
+                    </svg>
+                    Functionality of Multiplexers
+                </h1>
+                <p>
+                    Now that we know what a multiplexer is, let's understand how it works.
+                </p>
+                <div class="base_img">
+                    <img src="media/sample.png" alt="MUX" class="intro-image">
+                    <caption><u>4-to-1 Multiplexer</u></caption>
+                </div>
+                <p>
+                    Using a 4-to-1 Multiplexer as an example, we can see that it has 4 input lines 
+                    (I<sub style="font-size: 0.7em; vertical-align: sub;">0</sub> , I<sub style="font-size: 0.7em; vertical-align: sub;">1</sub> , I<sub style="font-size: 0.7em; vertical-align: sub;">2</sub> , I<sub style="font-size: 0.7em; vertical-align: sub;">3</sub>), 
+                    2 select lines (S<sub style="font-size: 0.7em; vertical-align: sub;">0</sub> , S<sub style="font-size: 0.7em; vertical-align: sub;">1</sub>), and 1 output line (Y).
+                </p>
+                <p>
+                    The output Y is determined by the combination of the select lines S<sub style="font-size: 0.7em; vertical-align: sub;">0</sub> and S<sub style="font-size: 0.7em; vertical-align: sub;">1</sub>.
+                </p>
+                <ul>
+                    <li>If S<sub style="font-size: 0.7em; vertical-align: sub;">1</sub>S<sub style="font-size: 0.7em; vertical-align: sub;">0</sub> = 00, Y = I<sub style="font-size: 0.7em; vertical-align: sub;">0</sub></li>
+                    <li>If S<sub style="font-size: 0.7em; vertical-align: sub;">1</sub>S<sub style="font-size: 0.7em; vertical-align: sub;">0</sub> = 01, Y = I<sub style="font-size: 0.7em; vertical-align: sub;">1</sub></li>
+                    <li>If S<sub style="font-size: 0.7em; vertical-align: sub;">1</sub>S<sub style="font-size: 0.7em; vertical-align: sub;">0</sub> = 10, Y = I<sub style="font-size: 0.7em; vertical-align: sub;">2</sub></li>
+                    <li>If S<sub style="font-size: 0.7em; vertical-align: sub;">1</sub>S<sub style="font-size: 0.7em; vertical-align: sub;">0</sub> = 11, Y = I<sub style="font-size: 0.7em; vertical-align: sub;">3</sub></li>
+                </ul>
+                <br>
+                <p>
+                    Conventionally, we use a truth table to visualize the functionality of a multiplexer, as shown below:
+                </p>
+                <table class="truthtable">
+                    <caption><strong>Truth Table</strong></caption>
+                    <thead>
+                        <tr>
+                            <th>S<sub style="font-size: 0.7em; vertical-align: sub;">1</sub></th>
+                            <th>S<sub style="font-size: 0.7em; vertical-align: sub;">0</sub></th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>I<sub style="font-size: 0.7em; vertical-align: sub;">0</sub></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>I<sub style="font-size: 0.7em; vertical-align: sub;">1</sub></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>I<sub style="font-size: 0.7em; vertical-align: sub;">2</sub></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>I<sub style="font-size: 0.7em; vertical-align: sub;">3</sub></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+            </section>
+
+            <section>
+                <div class="href-target" id="logic"></div>
+                <h1 class="package-name">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                        <path d="M16.2 12.96 L5.4 2.16 L5.4 23.76 Z" />
+                        <circle cx="18.36" cy="12.96" r="2.16" />
+
+                        <line x1="2.16" y1="12.96" x2="5.4" y2="12.96"></line>
+                        <line x1="20.52" y1="12.96" x2="23.76" y2="12.96"></line>
+                    </svg>
+                    Logic Gates
+                </h1>
+                <p>
+                    <strong>What are logic gates ?</strong>
+                </p>
+                <p style="margin: 0px;">
+                    They are the basic building blocks if any digiatal ciruits. Typically consisting of two inputs and one output, the logic gates are based on Boolean algebra. 
+                    At any given moment, every terminal is in one of the two binary conditions:
+                </p>
+                <ul >
+                    <li>0 (False)</li>
+                    <li>1 (True)</li>
+                </ul>
+                <p>
+                    Depending on the type of logic gate being used and the combination of inputs, the binary output will differ. 
+                </p>
+                <p style="margin: 0px;">
+                    In this section, we will cover the  <u>7 basic logic gates</u>:
+                </p>
+                <p>( <u>NOT</u>, <u>AND</u>, <u>OR</u>, <u>NAND</u>, <u>NOR</u>, <u>XOR</u>, and <u>XNOR</u>.)</p>
+                <br>
+                <div class="logicsection">
+                    <p><strong><u>NOT Gate</u></strong></p>
+                    <div class="logicvisuals">
+                        <div class="gatevisuals">
+                            <svg viewBox="0 0 100 100" stroke="black" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <path d="M64.8 51.84 L21.6 8.64 L21.6 95.04 Z" />
+                                <circle cx="73.44" cy="51.84" r="8.64" />
+
+                                <line x1="8.64" y1="51.84" x2="21.6" y2="51.84"></line>
+                                <line x1="82.08" y1="51.84" x2="95.04" y2="51.84"></line>
+                            </svg>
+                        </div>
+                        <div class="tablevisuals">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>A</th>
+                                        <th>Output</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><strong>Boolean expression: <a style="color:black ;text-decoration:overline">A</a></strong></p>
+                    <p>A logical inverter, sometimes called a NOT gate to differentiate it from other types of electronic inverter devices, has only one input. A NOT gate reverses the logic state. If the input is 1, then the output is 0. If the input is 0, then the output is 1.</p>
+                </div>
+                <br>
+                <div class="logicsection">
+                    <p><strong><u>AND Gate</u></strong></p>
+                    <div class="logicvisuals">
+                        <div class="gatevisuals">
+                            <svg viewBox="0 0 100 100" stroke="black" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <line x1="16.6" y1="20" x2="56.6" y2="20" />
+                                <line x1="16.6" y1="20" x2="16.6" y2="80" />
+                                <line x1="16.6" y1="80" x2="56.6" y2="80" />
+                                <path d="M56.6 20 A30 30 0 0 1 56.6 80" />
+
+                                <line x1="3.64" y1="33.76" x2="16.6" y2="33.76"></line>
+                                <line x1="3.64" y1="65.6" x2="16.6" y2="65.6"></line>
+                                <line x1="87" y1="51.84" x2="95.04" y2="51.84"></line>
+                            </svg>
+                        </div>
+                        <div class="tablevisuals">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>A</th>
+                                        <th>B</th>
+                                        <th>Output</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><strong>Boolean expression: A • B</strong></p>
+                    <p>The output of an AND gate is true (1) only if all of its inputs are true (1). If any of the inputs are false (0), the output will be false (0).</p>
+                </div>
+                <br>
+                <div class="logicsection">
+                    <p><strong><u>NAND Gate</u></strong></p>
+                    <div class="logicvisuals">
+                        <div class="gatevisuals">
+                            <svg viewBox="0 0 100 100" stroke="black" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <line x1="16.6" y1="20" x2="47.1" y2="20" />
+                                <line x1="16.6" y1="20" x2="16.6" y2="80" />
+                                <line x1="16.6" y1="80" x2="47.1" y2="80" />
+                                <path d="M47.1 20 A30 30 0 0 1 47.1 80" />
+                                <circle cx="82" cy="51.84" r="5" />
+
+                                <line x1="3.64" y1="33.76" x2="16.6" y2="33.76"></line>
+                                <line x1="3.64" y1="65.6" x2="16.6" y2="65.6"></line>
+                                <line x1="87" y1="51.84" x2="95.04" y2="51.84"></line>
+                            </svg>
+                        </div>
+                        <div class="tablevisuals">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>A</th>
+                                        <th>B</th>
+                                        <th>Output</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><strong>Boolean expression: <a style="color:black ;text-decoration:overline">A • B</a> = <a style="color:black ;text-decoration:overline">A</a> + <a style="color:black ;text-decoration:overline">B</a></strong></p>
+                    <p>The NAND gate returns the inverse output of an AND gate, given the same input. The output of a NAND gate is false (0) only if all of its inputs are true (1). If any of the inputs are false (0), the output will be true (1).</p>
+                </div>
+                <br>
+                <div class="logicsection">
+                    <p><strong><u>OR Gate</u></strong></p>
+                    <div class="logicvisuals">
+                        <div class="gatevisuals">
+                            <svg viewBox="0 0 100 100" stroke="black" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <path d="M 16.6 20 Q 36.6 50 16.6 80" />
+                                <path d="M 16.6 20 Q 56.6 25 87 51.84 Q 56.6 75 16.6 80" />
+
+                                <line x1="3.64" y1="33.76" x2="23" y2="33.76"></line>
+                                <line x1="3.64" y1="65.6" x2="23" y2="65.6"></line>
+                                <line x1="87" y1="51.84" x2="95.04" y2="51.84"></line>
+                            </svg>
+                        </div>
+                        <div class="tablevisuals">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>A</th>
+                                        <th>B</th>
+                                        <th>Output</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><strong>Boolean expression: A + B</strong></p>
+                    <p>The output of an OR gate is true (1) if at least one of its inputs is true (1). If all of the inputs are false (0), the output will be false (0).</p>
+                </div>
+                <br>
+                <div class="logicsection">
+                    <p><strong><u>NOR Gate</u></strong></p>
+                    <div class="logicvisuals">
+                        <div class="gatevisuals">
+                            <svg viewBox="0 0 100 100" stroke="black" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <path d="M 16.6 20 Q 36.6 50 16.6 80" />
+                                <path d="M 16.6 20 Q 56.6 25 77 51.84 Q 56.6 75 16.6 80" />
+                                <circle cx="82" cy="51.84" r="5" />
+
+                                <line x1="3.64" y1="33.76" x2="23" y2="33.76"></line>
+                                <line x1="3.64" y1="65.6" x2="23" y2="65.6"></line>
+                                <line x1="87" y1="51.84" x2="95.04" y2="51.84"></line>
+                            </svg>
+                        </div>
+                        <div class="tablevisuals">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>A</th>
+                                        <th>B</th>
+                                        <th>Output</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><strong>Boolean expression: <a style="color:black ;text-decoration:overline">A + B</a> = <a style="color:black ;text-decoration:overline">A</a> • <a style="color:black ;text-decoration:overline">B</a></strong></p>
+                    <p>The NOR gate returns the inverse output of an OR gate, given the same input. The output of a NOR gate is true (1) only if all of its inputs are false (0). If any of the inputs are true (1), the output will be false (0).</p>
+                </div>
+                <br>
+                <div class="logicsection">
+                    <p><strong><u>XOR Gate</u></strong></p>
+                    <div class="logicvisuals">
+                        <div class="gatevisuals">
+                            <svg viewBox="0 0 100 100" stroke="black" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <path d="M 16.6 20 Q 36.6 50 16.6 80" />
+                                <path d="M 20.6 20 Q 40.6 50 20.6 80" />
+                                <path d="M 20.6 20 Q 56.6 25 87 51.84 Q 56.6 75 20.6 80" />
+
+                                <line x1="3.64" y1="33.76" x2="23" y2="33.76"></line>
+                                <line x1="3.64" y1="65.6" x2="23" y2="65.6"></line>
+                                <line x1="87" y1="51.84" x2="95.04" y2="51.84"></line>
+                            </svg>
+                        </div>
+                        <div class="tablevisuals">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>A</th>
+                                        <th>B</th>
+                                        <th>Output</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><strong>Boolean expression: A ⊕ B = (<a style="color:black ;text-decoration:overline">A</a>B + A<a style="color:black ;text-decoration:overline">B</a>)</strong></p>
+                    <p>The XOR gate, or exclusive OR gate, returns true (1) if and only if the number of true (1) inputs is odd. For two inputs, the XOR gate returns true (1) if one input is true (1) and the other is false (0). If both inputs are the same, either both true (1) or both false (0), the output will be false (0).</p>
+                </div>
+                <br>
+                <div class="logicsection">
+                    <p><strong><u>XNOR Gate</u></strong></p>
+                    <div class="logicvisuals">
+                        <div class="gatevisuals">
+                            <svg viewBox="0 0 100 100" stroke="black" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <path d="M 16.6 20 Q 36.6 50 16.6 80" />
+                                <path d="M 20.6 20 Q 40.6 50 20.6 80" />
+                                <path d="M 20.6 20 Q 56.6 25 77 51.84 Q 56.6 75 20.6 80" />
+                                <circle cx="82" cy="51.84" r="5" />
+
+                                <line x1="3.64" y1="33.76" x2="23" y2="33.76"></line>
+                                <line x1="3.64" y1="65.6" x2="23" y2="65.6"></line>
+                                <line x1="87" y1="51.84" x2="95.04" y2="51.84"></line>
+                            </svg>
+                        </div>
+                        <div class="tablevisuals">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>A</th>
+                                        <th>B</th>
+                                        <th>Output</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><strong>Boolean expression: A ⊖ B = (AB + <a style="color:black ;text-decoration:overline">A</a> <a style="color:black ;text-decoration:overline">B</a>)</strong></p>
+                    <p>The XNOR gate, or exclusive NOR gate, returns true (1) if and only if the number of true (1) inputs is even. For two inputs, the XNOR gate returns true (1) if both inputs are the same, either both true (1) or both false (0). If one input is true (1) and the other is false (0), the output will be false (0).</p>
+                </div>
+                <br>
+            </section>
+
+            <section>
+                <div class="href-target" id="bool"></div>
+                <h1 class="package-name">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                        <line x1="10" y1="4" x2="8" y2="20"></line>
+                        <line x1="4" y1="7" x2="4" y2="17"></line>
+                        <ellipse cx="17" cy="12" rx="4" ry="6"></ellipse>
+                    </svg>
+                    Boolean Algebra
+                </h1>
+                <p>
+                    <strong>What is boolean algebra ?</strong>
+                </p>
+                <p>
+                    Boolean algebra is a branch of algebra that involves variables that can take on one of two values: true (1) or false (0). It is used to analyze and simplify digital circuits. 
+                    The basic operations of Boolean algebra are the logical AND, OR, and NOT functions.
+                </p>
+                <p>
+                    <strong>Laws for Boolean Algebra</strong>
+                </p>
+                <div class="tablevisuals">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>AND form</th>
+                                <th>OR form</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Identity Law</td>
+                                <td>1A = A</td>
+                                <td>0+A = A</td>
+                            </tr>
+                            <tr>
+                                <td>Null Law</td>
+                                <td>0A = 0</td>
+                                <td>1+A = 1</td>
+                            </tr>
+                            <tr>
+                                <td>Indempotent Law</td>
+                                <td>AA = A</td>
+                                <td>A+A = A</td>
+                            </tr>
+                            <tr>
+                                <td>Inverse Law</td>
+                                <td>A<a style="color:black ;text-decoration:overline">A</a> = 0</td>
+                                <td>A+<a style="color:black ;text-decoration:overline">A</a> = 1</td>
+                            </tr>
+                            <tr>
+                                <td>Commutative Law</td>
+                                <td>AB = BA</td>
+                                <td>A+B = B+A</td>
+                            </tr>
+                            <tr>
+                                <td>Associative Law</td>
+                                <td>(AB)C = A(BC)</td>
+                                <td>(A+B)+C = A+(B+C)</td>
+                            </tr>
+                            <tr>
+                                <td>Distributive Law</td>
+                                <td>A+BC = (A+B)(A+C)</td>
+                                <td>A(B+C) = AB+AC</td>
+                            </tr>
+                            <tr>
+                                <td>Absorption Law</td>
+                                <td>A(A+B) = A</td>
+                                <td>A+AB = A</td>
+                            </tr>
+                            <tr>
+                                <td>De Morgan's Law</td>
+                                <td><a style="color:black ;text-decoration:overline">AB</a> = <a style="color:black ;text-decoration:overline">A</a>+<a style="color:black ;text-decoration:overline">B</a></td>
+                                <td><a style="color:black ;text-decoration:overline">AB</a> = <a style="color:black ;text-decoration:overline">A</a> <a style="color:black ;text-decoration:overline">B</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <p><strong><u>Minterms</u></strong></p>
+                <p>Minterm is the product of various different literals in which each literal occurs exactly once. The output result of the minterm functions is <strong>1</strong>. It is represented by Σm(…).</p>
+                <p><strong><u>Maxterms</u></strong></p>
+                <p>Maxterm is the sum of various different literals in which each literal occurs exactly once. The output result of the maxterm functions is <strong>0</strong>. It is represented by ΠM(…).</p>
+                <br>
+            </section>
+
+            <section>
+                <div class="href-target" id="exercise"></div>
+                <h1 class="package-name">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                        <polyline points="9 11 12 14 22 4"></polyline>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                    Practice Questions
+                </h1>
+                <p>
+                    <strong style="display: block">Question 1</strong>
+                    Express the logic function F(a,b,c) of Figure 4 in the <em>maxterm</em> form, where the module is a 74153 <em>4-to-1 MUX</em>.
+                    (Seperate each term with a comma <code>,</code>)
+                </p>
+                <div class="base_img">
+                    <img src="media/Question1.png" alt="question1" class="intro-image">
+                </div>
+                <div class="nice-form-group">
+                    <label>F(a,b,c) = ΠM( </label>
+                    <input type="text" id="answer_one" placeholder="eg.0,1,2" value="" />
+                    <label>&nbsp; )</label>
+                </div>
+                <br>
+                <div class="submit_btn submit_one">
+                    Submit
+                </div>
+                <details>
+                    <summary>
+                    <div class="toggle-code">
+                        Q1 - Solution &nbsp;
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    </summary>
+                    <br>
+                    <p><strong>Answer: F(a,b,c) = ΠM(0,1,5,7)</strong></p>
+                    <table class="solutionTable">
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>a</th>
+                                <th>b = S<sub style="font-size: 0.7em; vertical-align: sub;">1</sub></th>
+                                <th>c = S<sub style="font-size: 0.7em; vertical-align: sub;">0</sub></th>
+                                <th>Y = F</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>I<sub style="font-size: 0.7em; vertical-align: sub;">0</sub>=a=0</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>I<sub style="font-size: 0.7em; vertical-align: sub;">1</sub>=0=0</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>I<sub style="font-size: 0.7em; vertical-align: sub;">2</sub>=1=1</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>I<sub style="font-size: 0.7em; vertical-align: sub;">3</sub>=<a style="text-decoration:overline">a</a>=1</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>4</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>I<sub style="font-size: 0.7em; vertical-align: sub;">0</sub>=a=1</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>I<sub style="font-size: 0.7em; vertical-align: sub;">1</sub>=0=0</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>6</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>I<sub style="font-size: 0.7em; vertical-align: sub;">2</sub>=1=1</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>7</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>I<sub style="font-size: 0.7em; vertical-align: sub;">3</sub>=<a style="text-decoration:overline">a</a>=0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <ul>
+                        <p><strong>Steps to solve:</strong></p>
+                        <li><strong>Step 1:</strong> Draw a truth table and list out <strong>ALL the combinations of a, b and c</strong>.</li>
+                        <li><strong>Step 2:</strong> Referencing <strong>b as S<sub style="font-size: 0.7em; vertical-align: sub;">1</sub></strong> and <strong>c as S<sub style="font-size: 0.7em; vertical-align: sub;">0</sub></strong> , 
+                            trace the input that referenced for the output, Y.</li>
+                        <li><strong>Step 3:</strong> For <strong>Maxterm</strong>, compile the indexes which the <strong>output is 0</strong>.</li>
+                    </ul>
+                </details>
+                <br>
+                <br>
+
+
+                <p>
+                    <strong style="display: block">Question 2</strong>
+                    Given the logic function <em>z(a,b,c,d) = (d + <a style="color: black ;text-decoration:overline">c</a> ⋅ a) ⋅ b</em>, 
+                    derive the <em>minterm</em> expression of z(a,b,c,d) in the form <em>z(a,b,c,d) = Σm( )</em>.
+                    (Seperate each term with a comma <code>,</code>)
+                </p>
+                <div class="nice-form-group">
+                    <label>z(a,b,c,d) = Σm( </label>
+                    <input type="text" id="answer_two" placeholder="eg.0,1,2" value="" />
+                    <label>&nbsp; )</label>
+                </div>
+                <br>
+                <div class="submit_btn submit_two">
+                    Submit
+                </div>
+                <details>
+                    <summary>
+                    <div class="toggle-code">
+                        Q2 - Solution &nbsp;
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    </summary>
+                    <br>
+                    <p><strong>Answer: z(a,b,c,d) = Σm(5, 7, 12, 13, 15)</strong></p>
+                    <table class="solutionTable">
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>a</th>
+                                <th>b</th>
+                                <th>c</th>
+                                <th>d</th>
+                                <th>z</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <p><strong>Steps to solve:</strong></p>
+                    <ul>
+                        <li><strong>Step 1:</strong> Simplify the z(a,b,c,d) equation from <strong>z(a,b,c,d) = (d + <a style="text-decoration:overline">c</a> ⋅ a) ⋅ b</strong> to 
+                            <strong>z(a,b,c,d) = bd + ab<a style="text-decoration:overline">c</a></strong>.</li>
+                        <li><strong>Step 2:</strong> Draw a truth table and list out <strong>ALL the combinations of a, b, c and d</strong>.</li>
+                        <li><strong>Step 3:</strong> At <strong>each iteration</strong>, solve for z(a,b,c,d).</li>
+                        <li><strong>Step 4:</strong> For <strong>minterm</strong>, compile the indexes which the <strong>output is 1</strong>.</li>
+                    </ul>
+                    <br>
+                    <strong>Side Note:</strong>
+                    <ol>
+                        <li>&nbsp;&nbsp; ⋅ => AND</li>
+                        <li>&nbsp;&nbsp; + => OR</li>
+                    </ol>
+                    <br>
+                </details>
+            </section>
+
+            <section>
+                <div class="href-target" id="resource"></div>
+                <h1 class="package-name">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                    Additional Resources
+                </h1>
+                <p>
+                    Reading materials are non-exhaustive, but the following are
+                    materials that helped me study and recap on the Digital Electronics content. 
+                    Feel free to browse through them to get a better understanding of the topics.
+                </p>
+                <strong>Past Year Papers:</strong>
+                <ul>
+                    <li><a href="https://entuedu-my.sharepoint.com/personal/eeeclub-sdd_e_ntu_edu_sg/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Feeeclub%2Dsdd%5Fe%5Fntu%5Fedu%5Fsg%2FDocuments%2FPYP%20Solutions%2FEEE%20PYP%20Complete%20Solutions%2FIE2104%2DDigital%20Electronics&sortField=LinkFilename&isAscending=true&ga=1"><u>OneDrive</u></a><br>
+                        &nbsp&nbsp Credits to NTU EEE Club
+                    </li>
+                </ul>
+                <br>
+                <!-- https://entuedu-my.sharepoint.com/personal/eeeclub-sdd_e_ntu_edu_sg/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Feeeclub%2Dsdd%5Fe%5Fntu%5Fedu%5Fsg%2FDocuments%2FPYP%20Solutions%2FEEE%20PYP%20Complete%20Solutions%2FIE2104%2DDigital%20Electronics&sortField=LinkFilename&isAscending=true&ga=1 -->
+                <strong>Cheat Sheet:</strong>
+                <ul>
+                    <li><a href="https://github.com/jovyntls/cheatsheets/blob/master/CS2100/cs2100-finals-summary.pdf"><u>Github Repository</u></a><br>
+                        &nbsp&nbsp Credits to <a href="https://github.com/jovyntls"><u>jovyntls</u></a>
+                    </li>
+                </ul>
+                <br>
+                <strong>Boolean Algebra Solver</strong>
+                <ul>
+                    <li><a href="https://www.boolean-algebra.com/"><u>Boolean Algebra Calculator</u></a><br>
+                        &nbsp&nbsp A tool to help simplify boolean expressions, generate kmap,truthtable and more.
+                    </li>
+                </ul>   
+                <br>
+                <strong>Textbooks:</strong>
+                <ul>
+                    <li>D. P. Larsen, “Picking the Right Dose: The Challenges of Applying Spaced Testing to
+                        Education,” National Library of Medicine, 2014.</li>
+                    <li>W. J. F, Digital Design: Principles and Practices, 4th Edition, Pearson Prentice-Hall,
+                        2007.</li>
+                    <li>R. C. H., Introduction to logic design, 3rd Edition, Pearson Prentice Hall, 2014. </li>
+                </ul>
+                <br>
+            </section>
+
+            <section>
+                <div class="href-target" id="about"></div>
+                <h1 class="package-name">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                    About
+                </h1>
+                <p>
+                    Hi, I'm <strong>Qi Chuan</strong>, a Final Year Electrical and Electronic Engineering student 
+                    at Nanyang Technological University (NTU). This project was created as part of 
+                    my <strong>Final Year Project</strong> under the supervison of <strong>A/P Jong Ching Chuen</strong>. I hope it can be a useful resource for students 
+                    studying Digital Electronics.
+                </p>
+
+                <p>
+                    The link below leads to the github repository for this website.
+                    If you encounter a bug on any device or have suggestions for
+                    improvement, don't hesitate to open a bug report or pull request.
+                </p>
+    
+                <a href="https://github.com/HoundZel/MUX" class="to-repo" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    Check out the repo
+                </a>
+            </section>
+            <footer style="color:whitesmoke;font-family: 'Montserrat', sans-serif;">&lt Poon Qi Chuan - AY 2024/25 &gt</footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll(' .arrowdown, .logo');
+    
+            for (const link of links) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            let isScrolling = false;
+
+            window.addEventListener("scroll", function () {
+                if (isScrolling) return;
+
+                const navBar = document.querySelector("#nav_bar");
+                const navRect = navBar.getBoundingClientRect(); // Get navbar position
+                const windowHeight = window.innerHeight;
+
+                // Check if the navbar is in the bottom half of the page
+                if (navRect.top > windowHeight / 2) {
+                    isScrolling = true;
+                    window.scrollTo({
+                        top: navRect.top,
+                        behavior: 'smooth'
+                    });
+                    setTimeout(() => { isScrolling = false; }, 1000); // Adjust timeout as needed
+                } else if (navRect.top > windowHeight * 0.05 && navRect.top < windowHeight * 0.45) {
+                    isScrolling = true;
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    setTimeout(() => { isScrolling = false; }, 1000); // Adjust timeout as needed
+                }
+            });
+        });
+    </script>
+</body>
+</html>
