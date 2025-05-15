@@ -2,32 +2,29 @@
 ## A web-page-based software program for Technology-Enhanced Learning (TEL) of Digital Multiplexers
 
 ### <u>ROOT folder</u>
-<p>
-    public folder - where all the source codes are
-</p>
-<p>
-    all othera assets are for firebase hosting
-</p>
+<ul>
+    <li>public folder - where all the source codes are</li>
+    <li>all other assets are for firebase hosting</li>
+</ul>
 
 ### <u>Landing Page</u>
-<p>
-    public folder - index.html, styles.css, script.js, formattings in nice-form folder
-</p>
+<ul>
+    <li>public folder - index.html, styles.css, script.js, formattings in nice-form folder</li>
+</ul>
 
 ### <u>Showcase Page</u>
-<p>
-    public\new_showcase folder - solver.html, solver.css, solver.js
-</p>
+<ul>
+    <li>public\new_showcase folder - solver.html, solver.css, solver.js</li>
+</ul>
 
 ### <u>Quiz 1.0 Page</u>
-<p>
-    public\practise folder - practise.html, styles.css, logic.js
-</p>
+<ul>
+    <li>public\practise folder - practise.html, styles.css, logic.js</li>
 
 ### <u>Quiz 2.0 Page</u>
-<p>
-    public\quiz2 folder - quiz2.html, quiz2.css, quiz2.js, quiz2_1.js(backup)
-</p>
+<ul>
+    <li>public\quiz2 folder - quiz2.html, quiz2.css, quiz2.js, quiz2_1.js(backup)</li>
+</ul>
 
 ### <u>Others</u>
 <ul>
